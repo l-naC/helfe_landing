@@ -29,9 +29,6 @@ get_header();
 				get_template_part( 'template-parts/content/content' );
 			}
 
-			// Previous/next page navigation.
-			twentynineteen_the_posts_navigation();
-
 		} else {
 
 			// If no content, include the "No posts found" template.
