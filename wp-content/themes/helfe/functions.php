@@ -98,3 +98,4 @@ add_action( 'wp_enqueue_scripts', 'helfe_enqueue_scripts' );
  * Enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/helfe-functions.php';
+require get_template_directory() . '/inc/template-tags.php';
