@@ -20,20 +20,7 @@
 
 	<div class="entry-content">
 		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Post title. Only visible to screen readers. */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'helfe' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			)
-		);
+		the_content();
 
 		wp_link_pages(
 			array(
