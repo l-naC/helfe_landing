@@ -46,7 +46,7 @@
 					),
 					get_the_title()
 				),
-				'<span class="edit-link">' . helfe_get_icon_svg( 'edit', 16 ),
+				'<span class="edit-link">',
 				'</span>'
 			);
 			?>

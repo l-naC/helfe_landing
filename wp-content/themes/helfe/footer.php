@@ -11,8 +11,8 @@
 
 ?>
 
-	</div><!-- #content -->
-
+</div><!-- #content -->
+FOOTER
 	<footer id="colophon" class="site-footer">
 		<?php get_template_part( 'templates/footer/footer', 'widgets' ); ?>
 		<div class="site-info">
@@ -42,8 +42,9 @@
 	</footer><!-- #colophon -->
 
 </div><!-- #page -->
-
-<?php wp_footer(); ?>
+<div>
+	<?php wp_footer(); ?>
+</div>
 
 </body>
 </html>
