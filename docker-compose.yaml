@@ -21,7 +21,7 @@ services:
     image: phpmyadmin/phpmyadmin
     restart: always
     ports:
-      - '8888:80'
+      - '8080:80'
     environment:
       PMA_HOST: db
       MYSQL_ROOT_PASSWORD: password
@@ -33,7 +33,7 @@ services:
       - db
     image: wordpress:latest
     ports:
-      - '8889:80'
+      - '8000:80'
     restart: always
     volumes: ['./:/var/www/html']
     environment:
