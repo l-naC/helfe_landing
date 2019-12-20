@@ -31,15 +31,15 @@
 				</p>
 		<?php endif; ?>
 		</div>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_menu" aria-controls="main_menu" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="col-md-6 mt-md-0 mt-3">
-		<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
+		<?php if ( has_nav_menu( 'primary' ) ) : ?>
 				<?php
 				wp_nav_menu(
 					array(
-						'theme_location' => 'menu-1',
+						'theme_location' => 'primary',
 						'menu_class'     => 'main-menu collapse navbar-collapse',
 						'items_wrap'     => '<ul id="%1$s" class="navbar-nav mr-auto %2$s">%3$s</ul>',
 						)
