@@ -41,7 +41,12 @@ if ( ! function_exists( 'helfe_posted_by' ) ) :
 	function helfe_posted_by() {
 		printf(
 			/* translators: 1: SVG icon. 2: Post author, only visible to screen readers. 3: Author link. */
-			'<span class="byline">%1$s<span class="screen-reader-text">%2$s</span><span class="author vcard"><a class="url fn n" href="%3$s">%4$s</a></span></span>',
+			'<span class="byline">%1$s 
+				<span class="screen-reader-text">%2$s</span>
+				<span class="author vcard">
+					<a class="url fn n" href="%3$s">%4$s</a>
+				</span>
+			</span>',
 			__( 'Posted by', 'helfe' ),
 			'<i class="far fa-user"></i>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
@@ -62,7 +67,7 @@ if ( ! function_exists( 'helfe_comment_count' ) ) :
 			/* translators: %s: Post title. Only visible to screen readers. */
 			comments_popup_link( sprintf( __( 'Leave a comment<span class="screen-reader-text"> on %s</span>', 'helfe' ), get_the_title() ) );
 
-			echo '</span>';
+			echo '</span><br>';
 		}
 	}
 endif;
@@ -80,17 +85,17 @@ if ( ! function_exists( 'helfe_entry_footer' ) ) :
 			helfe_posted_by();
 
 			// Posted on
-			helfe_posted_on();
+			// helfe_posted_on();
 
 			/* translators: Used between list items, there is a space after the comma. */
 			$categories_list = get_the_category_list( __( ', ', 'helfe' ) );
 			if ( $categories_list ) {
 				printf(
 					/* translators: 1: SVG icon. 2: Posted in label, only visible to screen readers. 3: List of categories. */
-					'<span class="cat-links">%1$s<span class="screen-reader-text">%2$s</span>%3$s</span>',
+					'<br><span class="cat-links">%1$s<span class="screen-reader-text">%2$s</span>%3$s</span>',
 					'<i class="far fa-file-archive"></i>',
 					__( 'Posted in', 'helfe' ),
-					$categories_list
+					$categories_list . '<br>'
 				); // WPCS: XSS OK.
 			}
 
@@ -99,7 +104,7 @@ if ( ! function_exists( 'helfe_entry_footer' ) ) :
 			if ( $tags_list ) {
 				printf(
 					/* translators: 1: SVG icon. 2: Posted in label, only visible to screen readers. 3: List of tags. */
-					'<span class="tags-links">%1$s<span class="screen-reader-text">%2$s </span>%3$s</span>',
+					'<br><span class="tags-links">%1$s<span class="screen-reader-text">%2$s </span>%3$s</span>',
 					'<',
 					// helfe_get_icon_svg( 'tag', 16 ),
 					__( 'Tags:', 'helfe' ),
@@ -127,9 +132,11 @@ if ( ! function_exists( 'helfe_entry_footer' ) ) :
 				),
 				get_the_title()
 			),
-			'<span class="edit-link">' . 
+			'<span class="edit-link">',
 			// helfe_get_icon_svg( 'edit', 16 ),
-			'</span>'
+			'</span>',
+			null,
+			' btn btn-outline-primary'
 		);
 	}
 endif;
