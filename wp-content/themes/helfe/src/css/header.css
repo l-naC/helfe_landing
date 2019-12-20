@@ -1,2 +1,27 @@
 #site-navigation{
+    background: white !important;
 }
+
+#navbarSupportedContent{
+}
+
+#menu-menu-principal{
+    flex-direction: row;
+    margin: 0 !important;
+}
+.site-logo a img{ 
+    height: 100px;
+    width: 122px;
+}
+
+.nav-link{
+    color: black !important;
+    padding-right: 3.5rem !important;
+    padding-left: 3.5rem !important;
+}
+
+.nav-link:hover{
+    color: #212580 !important;
+}
+
+
