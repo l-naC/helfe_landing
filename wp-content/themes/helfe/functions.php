@@ -9,6 +9,8 @@
  * @since 1.0.0
  */
 
+define('THEME_PATH', get_template_directory());
+
 function helfe_setup() {
     // Ajouter la prise en charge des images mises en avant
     add_theme_support( 'post-thumbnails' );
@@ -89,8 +91,11 @@ function helfe_enqueue_styles() {
     wp_register_style('bootstrap', get_template_directory_uri() . '/src/css/bootstrap.min.css' );
     $dependencies = array('bootstrap');
     wp_enqueue_style( 'helfe-style', get_stylesheet_uri(), $dependencies );
-    wp_enqueue_style( 'helfe_header', get_template_directory_uri() . '/src/css/header.css');
-    wp_enqueue_style( 'helfe_footer', get_template_directory_uri() . '/src/css/footer.css');
+    foreach( glob( THEME_PATH. '/src/css/*.css' ) as $file ) {
+        $file = str_replace(THEME_PATH, '', $file);
+        // $file contains the name and extension of the file
+        wp_enqueue_style( $file.'style', get_template_directory_uri() . $file);
+    }
 }
 
 function helfe_enqueue_scripts() {
@@ -125,12 +130,12 @@ fa_custom_setup_kit('https://kit.fontawesome.com/42deadbeef.js');
 /**
  * Custom Comment Walker template.
  */
-require get_template_directory() . '/inc/class-helfe-walker-comment.php';
+require THEME_PATH . '/inc/class-helfe-walker-comment.php';
 
 /**
  * Enhance the theme by hooking into WordPress.
  */
-require get_template_directory() . '/inc/helfe-functions.php';
-require get_template_directory() . '/inc/template-tags.php';
+require THEME_PATH . '/inc/helfe-functions.php';
+require THEME_PATH . '/inc/template-tags.php';
 
 
