@@ -21,7 +21,7 @@ function helfe_setup() {
     // This theme uses wp_nav_menu() in two locations.
     register_nav_menus(
         array(
-            'menu-1' => __( 'Primary', 'helfe' ),
+            'primary' => __( 'Primary', 'helfe' ),
             'footer' => __( 'Footer Menu', 'helfe' ),
             'social' => __( 'Social Links Menu', 'helfe' ),
         )
@@ -128,14 +128,8 @@ if (! function_exists('fa_custom_setup_kit') ) {
 fa_custom_setup_kit('https://kit.fontawesome.com/9b00180940.js');
 
 /**
- * Custom Comment Walker template.
+ * Custom Walker template and Enhance the theme by hooking into WordPress.
  */
-require THEME_PATH . '/inc/class-helfe-walker-comment.php';
-
-/**
- * Enhance the theme by hooking into WordPress.
- */
-require THEME_PATH . '/inc/helfe-functions.php';
-require THEME_PATH . '/inc/template-tags.php';
-
-
+foreach( glob( THEME_PATH. '/inc/*.php' ) as $file ) {
+    require $file;
+}
