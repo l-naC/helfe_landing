@@ -43,7 +43,7 @@
 		'theme_location' => 'social',
 		'menu_class'     => 'social-links-menu',
 		'container'			=> 'div',
-		'container_class'	=> 'collapse navbar-collapse justify-content-end',
+		'container_class'	=> 'collapse navbar-collapse justify-content-end col-1',
 		'container_id'		=> 'social_menu',
 		'link_before'    => '<span class="screen-reader-text">',
 		'link_after'     => '</span>',
