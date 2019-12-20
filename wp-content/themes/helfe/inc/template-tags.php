@@ -132,10 +132,8 @@ if ( ! function_exists( 'helfe_entry_footer' ) ) :
 				),
 				get_the_title()
 			),
-			'<span class="edit-link">',
-			'</span> ',
-			null,
-			'btn btn-outline-primary far fa-edit'
+			'<span class="edit-link btn btn-outline-primary"><i class="far fa-edit"></i> ',
+			'</span> '
 		);
 	}
 endif;
