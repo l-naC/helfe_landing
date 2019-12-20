@@ -62,7 +62,7 @@ if ( ! function_exists( 'helfe_comment_count' ) ) :
 	function helfe_comment_count() {
 		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link">';
-			// echo helfe_get_icon_svg( 'comment', 16 );
+			echo '<i class="fas fa-comments"></i> ';
 
 			/* translators: %s: Post title. Only visible to screen readers. */
 			comments_popup_link( sprintf( __( 'Leave a comment<span class="screen-reader-text"> on %s</span>', 'helfe' ), get_the_title() ) );
@@ -93,7 +93,7 @@ if ( ! function_exists( 'helfe_entry_footer' ) ) :
 				printf(
 					/* translators: 1: SVG icon. 2: Posted in label, only visible to screen readers. 3: List of categories. */
 					'<br><span class="cat-links">%1$s<span class="screen-reader-text">%2$s</span>%3$s</span>',
-					'<i class="far fa-file-archive"></i>',
+					'<i class="far fa-file-archive"></i> ',
 					__( 'Posted in', 'helfe' ),
 					$categories_list . '<br>'
 				); // WPCS: XSS OK.
@@ -106,7 +106,7 @@ if ( ! function_exists( 'helfe_entry_footer' ) ) :
 					/* translators: 1: SVG icon. 2: Posted in label, only visible to screen readers. 3: List of tags. */
 					'<br><span class="tags-links">%1$s<span class="screen-reader-text">%2$s </span>%3$s</span>',
 					'<',
-					// helfe_get_icon_svg( 'tag', 16 ),
+					'<i class="fas fa-tag"></i> ',
 					__( 'Tags:', 'helfe' ),
 					$tags_list
 				); // WPCS: XSS OK.
@@ -133,10 +133,9 @@ if ( ! function_exists( 'helfe_entry_footer' ) ) :
 				get_the_title()
 			),
 			'<span class="edit-link">',
-			// helfe_get_icon_svg( 'edit', 16 ),
-			'</span>',
+			'</span> ',
 			null,
-			' btn btn-outline-primary'
+			'btn btn-outline-primary far fa-edit'
 		);
 	}
 endif;
@@ -235,13 +234,13 @@ if ( ! function_exists( 'helfe_the_posts_navigation' ) ) :
 				'mid_size'  => 2,
 				'prev_text' => sprintf(
 					'%s <span class="nav-prev-text">%s</span>',
-					// helfe_get_icon_svg( 'chevron_left', 22 ),
+					'<i class="fas fa-chevron-left"></i>',
 					__( 'Newer posts', 'helfe' )
 				),
 				'next_text' => sprintf(
 					'<span class="nav-next-text">%s</span> %s',
 					__( 'Older posts', 'helfe' ),
-					// helfe_get_icon_svg( 'chevron_right', 22 )
+					'<i class="fas fa-chevron-right"></i>'
 				),
 			)
 		);
