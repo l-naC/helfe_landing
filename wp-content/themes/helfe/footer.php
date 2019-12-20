@@ -13,7 +13,6 @@
 
 </div><!-- #content -->
 	<footer id="colophon" class="site-footer page-footer">
-		<?php get_template_part( 'templates/footer/footer', 'widgets' ); ?>
 		<div class="site-info container-fluid text-center text-md-left">
 		<div class="row">
 			<div class="col-md-6 mt-md-0 mt-3">

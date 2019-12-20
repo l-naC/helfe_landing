@@ -247,13 +247,13 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 	 *
 	 * Added for backwards compatibility to support pre 5.2.0 WordPress versions.
 	 *
-	 * @since Twenty Nineteen 1.4
+	 * @since Helfe 1.0
 	 */
 	function wp_body_open() {
 		/**
 		 * Triggered after the opening <body> tag.
 		 *
-		 * @since Twenty Nineteen 1.4
+		 * @since Helfe 1.0
 		 */
 		do_action( 'wp_body_open' );
 	}
