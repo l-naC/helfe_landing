@@ -9,7 +9,7 @@
 
 $discussion = ! is_page() && helfe_can_show_post_thumbnail() ? helfe_get_discussion_data() : null; ?>
 
-<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+<?php the_title( '<h1 class="entry-title mt-5">', '</h1>' ); ?>
 
 <?php if ( ! is_page() ) : ?>
 <div class="entry-meta">

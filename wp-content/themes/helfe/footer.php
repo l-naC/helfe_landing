@@ -11,12 +11,11 @@
 
 ?>
 </div><!-- #content -->
-	<footer id="colophon" class="site-footer page-footer">
+	<footer id="colophon" class="site-footer page-footer footer mt-auto py-3">
 		<div id="footer_helfe">
-			<div class="site-info container-fluid text-center text-md-left">
-			<div class="row">
+			<div class="site-info container-fluid text-center text-md-left row">
 				<?php $blog_info = get_bloginfo( 'name' ); ?>
-				<div class="col-md-4 mb-md-0 mb-4 align-self-start">
+				<div class="col-md-6 mb-md-0 mb-4 align-self-start">
 					<?php if ( has_nav_menu( 'footer' ) ) : ?>
 						<nav class="footer-navigation list-unstyled" aria-label="<?php esc_attr_e( 'Footer Menu', 'helfe' ); ?>">
 							<?php
@@ -31,10 +30,10 @@
 						</nav><!-- .footer-navigation -->
 					<?php endif; ?>
 				</div>
-				<div class="col-md-4 mb-md-0 mb-4 align-self-end">
+				<div class="col-md-6 mb-md-0 mb-4 align-self-end">
 					<?php if ( has_nav_menu( 'social' ) ) : ?>
 						<nav class="footer-navigation list-unstyled" aria-label="<?php esc_attr_e( 'Social Menu', 'helfe' ); ?>">
-							Suivez-nous sur nos réseaux sociaux
+							<p>Suivez-nous sur nos réseaux sociaux : </p>
 							<?php
 							wp_nav_menu(
 								array(
@@ -47,7 +46,6 @@
 						</nav><!-- .social-navigation -->
 					<?php endif; ?>
 				</div>
-			</div><!-- .row -->
 			</div><!-- .site-info -->
 			<div class="footer-copyright text-center py-3">© Copyright
 				<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
