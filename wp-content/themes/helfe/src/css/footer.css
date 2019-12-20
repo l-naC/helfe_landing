@@ -1,2 +1,24 @@
-.footer-copyright{
+#footer_helfe{
+    background: #212580;
+    color: white;
+}
+
+#menu-footer-menu{
+    list-style-type: none !important;
+    padding: 0 !important;
+    margin-top: 50px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+#menu-footer-menu li{
+    margin: 20px 0;
+}
+#menu-footer-menu li a {
+    padding: 0 !important;
+}
+#menu-footer-menu li a{
+    color: white !important;
+}
+.footer-copyright a {
+    color: white !important;
 }
