@@ -89,6 +89,8 @@ function helfe_enqueue_styles() {
     wp_register_style('bootstrap', get_template_directory_uri() . '/src/css/bootstrap.min.css' );
     $dependencies = array('bootstrap');
     wp_enqueue_style( 'helfe-style', get_stylesheet_uri(), $dependencies );
+    wp_enqueue_style( 'helfe_header', get_template_directory_uri() . '/src/css/header.css');
+    wp_enqueue_style( 'helfe_footer', get_template_directory_uri() . '/src/css/footer.css');
 }
 
 function helfe_enqueue_scripts() {
