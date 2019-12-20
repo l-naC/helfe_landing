@@ -80,6 +80,11 @@ function helfe_widgets_init() {
 }
 add_action( 'widgets_init', 'helfe_widgets_init' );
 
+/**
+ * Bootstrap Setup
+ * 
+ * Adding Bootstrap
+ */
 function helfe_enqueue_styles() {
     wp_register_style('bootstrap', get_template_directory_uri() . '/src/css/bootstrap.min.css' );
     $dependencies = array('bootstrap');
