@@ -125,7 +125,7 @@ if (! function_exists('fa_custom_setup_kit') ) {
     }
 }
 
-fa_custom_setup_kit('https://kit.fontawesome.com/42deadbeef.js');
+fa_custom_setup_kit('https://kit.fontawesome.com/9b00180940.js');
 
 /**
  * Custom Comment Walker template.
