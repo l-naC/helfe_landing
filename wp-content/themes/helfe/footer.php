@@ -38,8 +38,15 @@
 							wp_nav_menu(
 								array(
 									'theme_location' => 'social',
-									'menu_class'     => 'social-menu',
-									'depth'          => 1,
+									'container'			=> 'div',
+									'container_class'	=> 'footer-social menu-social',
+									'container_id'		=> 'footer-social',
+									'menu_class'     	=> 'social-links-footer menu-items social-footer',
+									'menu_id' 			=> 'footer-social-items',
+									'link_before'   => '<span class="screen-reader-text">',
+									'link_after'    => '</span>',
+									'fallback_cb'	=> '',
+									'depth'         => 1,
 								)
 							);
 							?>

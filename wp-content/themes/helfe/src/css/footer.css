@@ -22,3 +22,14 @@
 .footer-copyright a {
     color: white !important;
 }
+
+/* SOCIAL FOOTER */
+
+
+.menu-social li a, .footer-social li a {
+    color: #FFF;
+}
+.menu-social li:hover > a, .footer-social li:hover > a
+{
+    color: #B3CDFB;
+}

@@ -27,7 +27,7 @@
 
 		printf(
 			'<span class="posted-on">%1$s<a href="%2$s" rel="bookmark">%3$s</a></span>',
-			'<i class="far fa-clock"></i>',
+			'<i class="far fa-clock"></i> ',
 			esc_url( get_permalink() ),
 			$time_string
 		);
@@ -65,8 +65,11 @@ if ( ! function_exists( 'helfe_comment_count' ) ) :
 			echo '<i class="fas fa-comments"></i> ';
 
 			/* translators: %s: Post title. Only visible to screen readers. */
-			comments_popup_link( sprintf( __( 'Leave a comment<span class="screen-reader-text"> on %s</span>', 'helfe' ), get_the_title() ) );
-
+			comments_popup_link( __( 'Laissez un commentaires', 'helfe' ), 
+				__( '1 commentaire', 'helfe' ), 
+				__( '% commentaires', 'helfe' )
+			);
+				
 			echo '</span><br>';
 		}
 	}
