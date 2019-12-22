@@ -82,6 +82,11 @@ function helfe_widgets_init() {
 }
 add_action( 'widgets_init', 'helfe_widgets_init' );
 
+function helfe_enqueue_scripts() {
+    $dependencies = array('jquery');
+    wp_enqueue_script('bootstrap', get_template_directory_uri().'/src/js/bootstrap.min.js', $dependencies, '3.3.6', true );
+}
+
 /**
  * Bootstrap Setup
  * 
@@ -98,13 +103,8 @@ function helfe_enqueue_styles() {
     }
 }
 
-function helfe_enqueue_scripts() {
-    $dependencies = array('jquery');
-    wp_enqueue_script('bootstrap', get_template_directory_uri().'/src/js/bootstrap.min.js', $dependencies, '3.3.6', true );
-}
-
-add_action( 'wp_enqueue_scripts', 'helfe_enqueue_styles' );
 add_action( 'wp_enqueue_scripts', 'helfe_enqueue_scripts' );
+add_action( 'wp_enqueue_scripts', 'helfe_enqueue_styles' );
 
 /**
  * Font Awesome Kit Setup

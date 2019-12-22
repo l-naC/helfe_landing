@@ -26,13 +26,13 @@ $discussion = helfe_get_discussion_data();
 
 <div id="comments" class="<?php echo comments_open() ? 'comments-area' : 'comments-area comments-closed'; ?>">
 	<div class="<?php echo $discussion->responses > 0 ? 'comments-title-wrap' : 'comments-title-wrap no-responses'; ?>">
-		<h2 class="comments-title">
+		<h2 class="comments-title mt-5">
 		<?php
 		if ( comments_open() ) {
 			if ( have_comments() ) {
-				_e( 'Join the Conversation', 'helfe' );
+				_e( 'Rejoignez la conversation', 'helfe' );
 			} else {
-				_e( 'Leave a comment', 'helfe' );
+				_e( 'Laissez un commentaire', 'helfe' );
 			}
 		} else {
 			if ( '1' == $discussion->responses ) {
@@ -71,24 +71,24 @@ $discussion = helfe_get_discussion_data();
 		}
 
 		?>
-		<ol class="comment-list">
+		<div class="comment-list">
 			<?php
 			wp_list_comments(
 				array(
 					'walker'      => new Helfe_Walker_Comment(),
 					'avatar_size' => helfe_get_avatar_size(),
 					'short_ping'  => true,
-					'style'       => 'ol',
+					'style'       => 'li',
 				)
 			);
 			?>
-		</ol><!-- .comment-list -->
+		</div><!-- .comment-list -->
 		<?php
 
 		// Show comment navigation
 		if ( have_comments() ) :
-			$prev_icon     = helfe_get_icon_svg( 'chevron_left', 22 );
-			$next_icon     = helfe_get_icon_svg( 'chevron_right', 22 );
+			$prev_icon     = '<i class="fas fa-chevron-left"></i>';
+			$next_icon     = '<i class="fas fa-chevron-right"></i>';
 			$comments_text = __( 'Comments', 'helfe' );
 			the_comments_navigation(
 				array(
@@ -102,9 +102,9 @@ $discussion = helfe_get_discussion_data();
 		if ( comments_open() && 'asc' === strtolower( get_option( 'comment_order', 'asc' ) ) ) :
 			?>
 			<div class="comment-form-flex">
-				<span class="screen-reader-text"><?php _e( 'Leave a comment', 'helfe' ); ?></span>
+				<h2 class="comments-title mt-5" aria-hidden="true"><?php _e( 'Laissez un commentaire', 'helfe' ); ?></h2>
+				<span class="screen-reader-text"><?php _e( 'Laissez un commentaire', 'helfe' ); ?></span>
 				<?php helfe_comment_form( 'asc' ); ?>
-				<h2 class="comments-title" aria-hidden="true"><?php _e( 'Leave a comment', 'helfe' ); ?></h2>
 			</div>
 			<?php
 		endif;
@@ -113,7 +113,7 @@ $discussion = helfe_get_discussion_data();
 		if ( ! comments_open() ) :
 			?>
 			<p class="no-comments">
-				<?php _e( 'Comments are closed.', 'helfe' ); ?>
+				<?php _e( 'Les commentaires sont fermés.', 'helfe' ); ?>
 			</p>
 			<?php
 		endif;
@@ -126,3 +126,4 @@ $discussion = helfe_get_discussion_data();
 	endif; // if have_comments();
 	?>
 </div><!-- #comments -->
+

@@ -31,23 +31,28 @@
 	</div><!-- .entry-content -->
 
 	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
+		<div class="entry-footer row">
 			<?php
 			edit_post_link(
 				sprintf(
 					wp_kses(
 						/* translators: %s: Post title. Only visible to screen readers. */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'helfe' ),
+						__( '<i class="far fa-edit"></i> Editer <span class="screen-reader-text">%s</span>', 'helfe' ),
 						array(
-							'span' => array(
+							'i'	 	=> array(
+								'class' => array(),
+							),
+							'span' 	=> array(
 								'class' => array(),
 							),
 						)
 					),
 					get_the_title()
 				),
-				'<span class="edit-link">',
-				'</span>'
+				'<span class="edit-link col-2 d-flex justify-content-end">',
+				'</span>',
+				0,
+				'btn btn-outline-primary'
 			);
 			?>
 		</footer><!-- .entry-footer -->

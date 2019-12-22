@@ -12,7 +12,7 @@ $discussion = ! is_page() && helfe_can_show_post_thumbnail() ? helfe_get_discuss
 <?php the_title( '<h1 class="entry-title mt-5">', '</h1>' ); ?>
 
 <?php if ( ! is_page() ) : ?>
-<div class="entry-meta">
+<div class="entry-meta row">
 	<?php helfe_posted_by(); ?>
 	<?php helfe_posted_on(); ?>
 	<span class="comment-count">
@@ -29,17 +29,22 @@ $discussion = ! is_page() && helfe_can_show_post_thumbnail() ? helfe_get_discuss
 			sprintf(
 				wp_kses(
 					/* translators: %s: Post title. Only visible to screen readers. */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'helfe' ),
+					__( '<i class="far fa-edit"></i> Editer <span class="screen-reader-text">%s</span>', 'helfe' ),
 					array(
-						'span' => array(
+						'i'	 	=> array(
+							'class' => array(),
+						),
+						'span' 	=> array(
 							'class' => array(),
 						),
 					)
 				),
 				get_the_title()
 			),
-			'<span class="edit-link">',
-			'</span>'
+			'<span class="edit-link col-2 d-flex justify-content-end">',
+			'</span>',
+			0,
+			'btn btn-outline-primary'
 		);
 	?>
 </div><!-- .entry-meta -->

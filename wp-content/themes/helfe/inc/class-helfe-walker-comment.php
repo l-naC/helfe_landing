@@ -28,8 +28,8 @@ class Helfe_Walker_Comment extends Walker_Comment {
 		$tag = ( 'div' === $args['style'] ) ? 'div' : 'li';
 
 		?>
-		<<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent' : '', $comment ); ?>>
-			<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
+		<<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent' : '', $comment ); ?>>		
+			<div id="div-comment-<?php comment_ID(); ?>" class="comment-body mb-3">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
 						<?php
@@ -50,7 +50,7 @@ class Helfe_Walker_Comment extends Walker_Comment {
 						 * fill color to the inner check shape when in circle form.
 						 */
 						if ( helfe_is_comment_by_post_author( $comment ) ) {
-							printf( '<span class="post-author-badge" aria-hidden="true">%s</span>', helfe_get_icon_svg( 'check', 24 ) );
+							printf( '<span class="post-author-badge" aria-hidden="true">%s</span>', '<i class="fas fa-check"></i>');
 						}
 
 						printf(
@@ -83,17 +83,21 @@ class Helfe_Walker_Comment extends Walker_Comment {
 							</time>
 						</a>
 						<?php
-							$edit_comment_icon = helfe_get_icon_svg( 'edit', 16 );
-							edit_comment_link( __( 'Edit', 'helfe' ), '<span class="edit-link-sep">&mdash;</span> <span class="edit-link">' . $edit_comment_icon, '</span>' );
+							$edit_comment_icon = '<i class="far fa-edit"></i>';
+							edit_comment_link( __( 'Edit', 'helfe' ), 
+							'<span class="edit-link-sep">&mdash;</span> <span class="edit-link col-2 d-flex justify-content-end">' . $edit_comment_icon,
+							'</span>',
+							0,
+							'btn btn-outline-primary');
 						?>
 					</div><!-- .comment-metadata -->
 
 					<?php
 					$commenter = wp_get_current_commenter();
 					if ( $commenter['comment_author_email'] ) {
-						$moderation_note = __( 'Your comment is awaiting moderation.', 'helfe' );
+						$moderation_note = __( 'Votre commentaire est en attente de vérification.', 'helfe' );
 					} else {
-						$moderation_note = __( 'Your comment is awaiting moderation. This is a preview, your comment will be visible after it has been approved.', 'helfe' );
+						$moderation_note = __( 'Votre commentaire est en attente de vérification. Ceci est un preview, votre commentaire sera visible après avoir été approuvé.', 'helfe' );
 					}
 					?>
 
@@ -107,7 +111,7 @@ class Helfe_Walker_Comment extends Walker_Comment {
 					<?php comment_text(); ?>
 				</div><!-- .comment-content -->
 
-			</article><!-- .comment-body -->
+			</div><!-- .comment-body -->
 
 			<?php
 			comment_reply_link(

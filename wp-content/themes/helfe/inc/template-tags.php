@@ -41,7 +41,7 @@ if ( ! function_exists( 'helfe_posted_by' ) ) :
 	function helfe_posted_by() {
 		printf(
 			/* translators: 1: SVG icon. 2: Post author, only visible to screen readers. 3: Author link. */
-			'<span class="byline">%1$s 
+			'<span class="byline col">%1$s 
 				<span class="screen-reader-text">%2$s</span>
 				<span class="author vcard">
 					<a class="url fn n" href="%3$s">%4$s</a>
@@ -61,7 +61,7 @@ if ( ! function_exists( 'helfe_comment_count' ) ) :
 	 */
 	function helfe_comment_count() {
 		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
+			echo '<span class="comments-link col">';
 			echo '<i class="fas fa-comments"></i> ';
 
 			/* translators: %s: Post title. Only visible to screen readers. */
@@ -92,7 +92,7 @@ if ( ! function_exists( 'helfe_entry_footer' ) ) :
 			if ( $categories_list ) {
 				printf(
 					/* translators: 1: SVG icon. 2: Posted in label, only visible to screen readers. 3: List of categories. */
-					'<br><span class="cat-links">%1$s<span class="screen-reader-text">%2$s</span>%3$s</span>',
+					'<br><span class="cat-links col">%1$s<span class="screen-reader-text">%2$s</span>%3$s</span>',
 					'<i class="far fa-file-archive"></i> ',
 					__( 'Posted in', 'helfe' ),
 					$categories_list . '<br>'
@@ -123,17 +123,22 @@ if ( ! function_exists( 'helfe_entry_footer' ) ) :
 			sprintf(
 				wp_kses(
 					/* translators: %s: Post title. Only visible to screen readers. */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'helfe' ),
+					__( '<i class="far fa-edit"></i> Editer <span class="screen-reader-text">%s</span>', 'helfe' ),
 					array(
-						'span' => array(
+						'i'	 	=> array(
+							'class' => array(),
+						),
+						'span' 	=> array(
 							'class' => array(),
 						),
 					)
 				),
 				get_the_title()
 			),
-			'<span class="edit-link btn btn-outline-primary"><i class="far fa-edit"></i> ',
-			'</span> '
+			'<span class="edit-link col-2 d-flex justify-content-end">',
+			'</span>',
+			0,
+			'btn btn-outline-primary'
 		);
 	}
 endif;
@@ -214,12 +219,26 @@ if ( ! function_exists( 'helfe_comment_form' ) ) :
 
 			comment_form(
 				array(
-					'logged_in_as' => null,
-					'title_reply'  => null,
+					'logged_in_as' 	=> null,
+					'title_reply'  	=> null,
+					'submit_button' => '<input name="%1$s" type="submit" id="%2$s" class="%3$s btn btn-outline-primary" value="%4$s" />',
+					'comment_field' => '<p class="comment-form-comment form-group">
+					<label for="comment">' . _x( 'Comment', 'noun' ) . '</label><br />
+					<textarea class="form-control" id="comment" name="comment" aria-required="true" rows="3"></textarea>
+					</p>',
 				)
 			);
 		}
 	}
+endif;
+
+if ( ! function_exists( 'helfe_add_reply_link_css' ) ) :
+	/* Add CSS classes to 'Reply Link' Button */
+	function helfe_add_reply_link_css($class){
+		$class = str_replace("class='comment-reply-link'", "class='comment-reply-link btn btn-outline-primary'", $class);
+		return $class;
+	}
+	add_filter('comment_reply_link', 'helfe_add_reply_link_css');
 endif;
 
 if ( ! function_exists( 'helfe_the_posts_navigation' ) ) :
@@ -262,3 +281,10 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 		do_action( 'wp_body_open' );
 	}
 endif;
+
+/**
+ * Returns the size for avatars used in the theme.
+ */
+function helfe_get_avatar_size() {
+	return 50;
+}

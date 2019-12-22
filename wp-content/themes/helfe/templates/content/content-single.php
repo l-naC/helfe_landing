@@ -18,7 +18,7 @@
 	</header>
 	<?php endif; ?>
 
-	<div class="entry-content">
+	<div class="entry-content mt-3">
 		<?php
 		the_content();
 
@@ -30,10 +30,6 @@
 		);
 		?>
 	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php helfe_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 
 	<?php if ( ! is_singular( 'attachment' ) ) : ?>
 		<?php get_template_part( 'templates/post/author', 'bio' ); ?>
