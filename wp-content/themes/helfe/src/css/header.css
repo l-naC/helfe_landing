@@ -52,7 +52,7 @@
 {
     margin-bottom: 0;
 }
-.menu-social ul, .footer-social ul {
+.menu-social ul {
     text-align: right;
     list-style: none;
 }
@@ -60,7 +60,7 @@
     position: relative;
     display:  inline-block;
 }
-.menu-social li a:before, .footer-social li a:before {
+.menu-social li a:before {
     display: inline-block;
     vertical-align: bottom;
     padding: 0.5rem 0.5rem;

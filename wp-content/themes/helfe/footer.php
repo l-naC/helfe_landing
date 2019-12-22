@@ -32,14 +32,14 @@
 				</div>
 				<div class="col-md-6 mb-md-0 mb-4 align-self-end">
 					<?php if ( has_nav_menu( 'social' ) ) : ?>
-						<nav class="footer-navigation list-unstyled" aria-label="<?php esc_attr_e( 'Social Menu', 'helfe' ); ?>">
+						<nav class="footer-navigation list-unstyled" id="footer-social-container" aria-label="<?php esc_attr_e( 'Social Menu', 'helfe' ); ?>">
 							<p>Suivez-nous sur nos réseaux sociaux : </p>
 							<?php
 							wp_nav_menu(
 								array(
 									'theme_location' => 'social',
 									'container'			=> 'div',
-									'container_class'	=> 'footer-social menu-social',
+									'container_class'	=> 'footer-social',
 									'container_id'		=> 'footer-social',
 									'menu_class'     	=> 'social-links-footer menu-items social-footer',
 									'menu_id' 			=> 'footer-social-items',
