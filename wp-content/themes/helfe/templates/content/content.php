@@ -23,6 +23,7 @@
 			the_title( sprintf( '<h2 class="entry-title mt-5"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
 		endif;
 		?>
+		<?php get_template_part( 'templates/header/header', 'post' ); ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
@@ -50,8 +51,4 @@
 		);
 		?>
 	</div><!-- .entry-content -->
-
-	<div class="entry-footer row">
-		<?php helfe_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

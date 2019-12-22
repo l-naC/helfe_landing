@@ -9,10 +9,12 @@
 
 $discussion = ! is_page() && helfe_can_show_post_thumbnail() ? helfe_get_discussion_data() : null; ?>
 
-<?php the_title( '<h1 class="entry-title mt-5">', '</h1>' ); ?>
+<?php if ( ! is_home() ) :
+the_title( '<h1 class="entry-title mt-5">', '</h1>' ); 
+endif; ?>
 
 <?php if ( ! is_page() ) : ?>
-<div class="entry-meta row">
+<div class="entry-meta row mb-3">
 	<?php helfe_posted_by(); ?>
 	<?php helfe_posted_on(); ?>
 	<span class="comment-count">

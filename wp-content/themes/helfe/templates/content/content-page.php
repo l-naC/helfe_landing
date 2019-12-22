@@ -29,32 +29,4 @@
 		);
 		?>
 	</div><!-- .entry-content -->
-
-	<?php if ( get_edit_post_link() ) : ?>
-		<div class="entry-footer row">
-			<?php
-			edit_post_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: Post title. Only visible to screen readers. */
-						__( '<i class="far fa-edit"></i> Editer <span class="screen-reader-text">%s</span>', 'helfe' ),
-						array(
-							'i'	 	=> array(
-								'class' => array(),
-							),
-							'span' 	=> array(
-								'class' => array(),
-							),
-						)
-					),
-					get_the_title()
-				),
-				'<span class="edit-link col-2 d-flex justify-content-end">',
-				'</span>',
-				0,
-				'btn btn-outline-primary'
-			);
-			?>
-		</footer><!-- .entry-footer -->
-	<?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->
