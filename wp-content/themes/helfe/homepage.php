@@ -1,4 +1,5 @@
 <?php
+/* Template Name: HOMEPAGE */
 /**
  * The homepage template file
  *
@@ -13,6 +14,28 @@
  * @subpackage Helfe
  * @since 1.0.0
  */
-
 get_header();
 ?>
+<div id="primary" class="content-area vw-100">
+    <main id="main" class="site-main">
+
+    <?php
+    if ( have_posts() ) {
+
+        // Load posts loop.
+        while ( have_posts() ) {
+            the_post();
+            get_template_part( 'templates/content/content' );
+        }
+
+    } else {
+
+        // If no content, include the "No posts found" template.
+        get_template_part( 'templates/content/content', 'none' );
+
+    }
+    ?>
+
+    </main><!-- .site-main -->
+</div><!-- .content-area -->
+<?php get_footer(); ?>
