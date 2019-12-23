@@ -11,7 +11,7 @@
 
 ?>
 </div><!-- #content -->
-	<footer id="colophon" class="site-footer page-footer footer mt-auto py-3">
+	<footer id="colophon" class="site-footer page-footer footer mt-auto">
 		<div id="footer_helfe">
 			<div class="site-info container-fluid text-center text-md-left row">
 				<?php $blog_info = get_bloginfo( 'name' ); ?>
