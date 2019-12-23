@@ -12,7 +12,7 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area container">
+	<div id="primary" class="content-area container mb-3">
 		<main id="main" class="site-main">
 
 		<?php if ( have_posts() ) : ?>
@@ -40,7 +40,7 @@ get_header();
 			endwhile;
 
 			// Previous/next page navigation.
-			twentynineteen_the_posts_navigation();
+			helfe_the_posts_navigation();
 
 			// If no content, include the "No posts found" template.
 		else :
