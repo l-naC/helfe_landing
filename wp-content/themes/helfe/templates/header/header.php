@@ -37,22 +37,5 @@
 	wp_nav_menu($args);
 	?>
 <?php endif; ?>
-<?php if ( has_nav_menu( 'social' ) ) : ?>
-	<?php
-	$args = [
-		'theme_location' 	=> 'social',
-		'container'			=> 'div',
-		'container_class'	=> 'menu-social collapse navbar-collapse justify-content-end col-1',
-		'container_id'		=> 'menu-social social_menu',
-		'menu_class'     	=> 'social-links-menu menu-items',
-		'menu_id' 			=> 'menu-social-items',
-		'link_before'   => '<span class="screen-reader-text">',
-		'link_after'    => '</span>',
-		'fallback_cb'	=> '',
-		'depth'         => 1,
-	];
-	wp_nav_menu($args);
-	?>
-<?php endif; ?>
 </nav>
 <!-- #site-navigation -->
