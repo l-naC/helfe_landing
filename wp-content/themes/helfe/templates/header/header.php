@@ -31,7 +31,7 @@
 		'container'			=> 'div',
 		'container_class'	=> 'collapse navbar-collapse justify-content-end',
 		'container_id'		=> 'main_menu',
-		'items_wrap'		=> '<ul id="%1$s" class="navbar-nav mr-auto %2$s">%3$s</ul>',
+		'items_wrap'		=> '<ul class="navbar-nav %2$s">%3$s</ul>',
 		'walker' => new Helfe_Walker_Menu()
 	];
 	wp_nav_menu($args);

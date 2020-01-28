@@ -2,13 +2,6 @@
     background: white !important;
 }
 
-#main_menu{
-}
-
-#menu-menu-principal{
-    flex-direction: row;
-    margin: 0 !important;
-}
 .site-logo a img{ 
     height: 100px;
     width: 122px;

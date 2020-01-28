@@ -13,9 +13,9 @@
 </div><!-- #content -->
 	<footer id="colophon" class="site-footer page-footer footer mt-auto">
 		<div id="footer_helfe">
-			<div class="site-info container-fluid text-center text-md-left row">
+			<div class="site-info container-fluid text-center text-md-left row mx-0">
 				<?php $blog_info = get_bloginfo( 'name' ); ?>
-				<div class="col-md-6 mb-md-0 mb-4 align-self-start">
+				<div class="col-md-6 mb-md-0 mb-4 align-self-center">
 					<?php if ( has_nav_menu( 'footer' ) ) : ?>
 						<nav class="footer-navigation list-unstyled" aria-label="<?php esc_attr_e( 'Footer Menu', 'helfe' ); ?>">
 							<?php
@@ -30,7 +30,7 @@
 						</nav><!-- .footer-navigation -->
 					<?php endif; ?>
 				</div>
-				<div class="col-md-6 mb-md-0 mb-4 align-self-end">
+				<div class="col-md-6 mb-md-0 mb-4 align-self-center">
 					<?php if ( has_nav_menu( 'social' ) ) : ?>
 						<nav class="footer-navigation list-unstyled" id="footer-social-container" aria-label="<?php esc_attr_e( 'Social Menu', 'helfe' ); ?>">
 							<p>Suivez-nous sur nos réseaux sociaux : </p>
@@ -60,7 +60,6 @@
 			</div>
 		</div>
 	</footer><!-- #colophon -->
-
 </div><!-- #page -->
 <div>
 	<?php wp_footer(); ?>
