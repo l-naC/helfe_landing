@@ -1,0 +1,73 @@
+#footer_helfe{
+    background: #212580;
+    color: white;
+}
+
+#menu-footer-menu{
+    list-style-type: none !important;
+    padding: 0 !important;
+    margin-top: 50px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+#menu-footer-menu li{
+    margin: 20px 0;
+}
+#menu-footer-menu li a {
+    padding: 0 !important;
+}
+#menu-footer-menu li a{
+    color: white !important;
+}
+.footer-copyright a {
+    color: white !important;
+}
+
+/* SOCIAL FOOTER */
+
+#footer-social-container {
+    text-align: center;
+}
+
+.footer-social li a[href*="dribbble.com"]::before { content: '\f17d'; }
+.footer-social li a[href*="facebook.com"]::before { content: '\f09a'; }
+.footer-social li a[href*="flickr.com"]::before { content: '\f16e'; }
+.footer-social li a[href*="foursquare.com"]::before { content: '\f180'; }
+.footer-social li a[href*="github.com"]::before { content: '\f09b'; }
+.footer-social li a[href*="plus.google.com"]::before { content: '\f0d5'; }
+.footer-social li a[href*="instagram.com"]::before { content: '\f16d'; }
+.footer-social li a[href*="jsfiddle.com"]::before { content: '\f1cc'; }
+.footer-social li a[href*="linkedin.com"]::before { content: '\f0e1'; }
+.footer-social li a[href*="pinterest.com"]::before { content: '\f0d2'; }
+.footer-social li a[href*="reddit.com"]::before { content: '\f1a1'; }
+.footer-social li a[href*="soundcloud.com"]::before { content: '\f1be'; }
+.footer-social li a[href*="stackoverflow.com"]::before { content: '\f16c'; }
+.footer-social li a[href*="tumblr.com"]::before { content: '\f173'; }
+.footer-social li a[href*="twitter.com"]::before { content: '\f099'; }
+.footer-social li a[href*="vimeo.com"]::before { content: '\f194'; }
+.footer-social li a[href*="vine.co"]::before { content: '\f1ca'; }
+.footer-social li a[href*="yelp.com"]::before { content: '\f1e9'; }
+.footer-social li a[href*="youtube.com"]::before { content: '\f167'; }
+.footer-social li a[href*="wordpress.com"]::before { content: '\f19a'; }
+.footer-social li a[href*="wordpress.org"]::before { content: '\f19a'; }
+
+.footer-social li a:before
+{
+    display: inline-block;
+    vertical-align: bottom;
+    font-family: 'Fontawesome';
+    font-size: 1.6rem;
+    -webkit-font-smoothing: antialiased;
+    content: '\f08e';
+}
+.footer-social ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-social li a{
+    color: #FFF;
+}
+.footer-social li:hover > a
+{
+    color: #B3CDFB;
+}
