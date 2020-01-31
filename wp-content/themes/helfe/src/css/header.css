@@ -1,5 +1,7 @@
 #site-navigation{
     background: white !important;
+    position: fixed;
+    width: 100%;
 }
 
 .site-logo a img{ 
