@@ -17,7 +17,7 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area container align-middle" style="margin-top: 116px;">
+	<div id="primary" class="content-area container align-middle">
 		<main id="main" class="site-main">
 
 		<?php

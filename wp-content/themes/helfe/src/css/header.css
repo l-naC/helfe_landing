@@ -2,6 +2,7 @@
     background: white !important;
     position: fixed;
     width: 100%;
+    z-index: 1;
 }
 
 .site-logo a img{ 
